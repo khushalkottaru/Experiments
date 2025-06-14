@@ -1,0 +1,21 @@
+import random as r
+
+lottery_characters = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e']
+winning_ticket = []
+
+for random_pick in range(4):
+    winning_ticket.append(r.choice(lottery_characters))
+
+print(f'Any ticket matching {winning_ticket} wins!')
+
+tries = 0
+while True:
+    my_ticket = []
+    for random_pick in range(0, 4):
+        my_ticket.append(r.choice(lottery_characters))
+
+    if my_ticket == winning_ticket:
+        print(f'You won in {tries} tries.')
+        break
+    else:
+        tries += 1
